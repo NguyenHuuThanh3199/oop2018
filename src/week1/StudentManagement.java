@@ -3,7 +3,6 @@ package week1;
 import java.util.Scanner;
 
 public class StudentManagement {
-
     // TODO: khai báo thuộc tính students là array chứa các đối tượng thuộc lớp Student (max. 100)
     public Student [] Student_arr=new Student[100];
 
