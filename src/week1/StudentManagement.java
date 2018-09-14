@@ -14,6 +14,8 @@ public class StudentManagement {
 
     void studentsByGroup() {
         // TODO:
+        //sap xep sinh vien theo lop
+        
     }
 
     void removeStudent(String id) {
@@ -31,22 +33,41 @@ public class StudentManagement {
 
     public static void main(String[] args) {
         // TODO:
-//        Student thanh=new Student();
-//        thanh.setGroup("INT2204-5");
-//        Student me=new Student();
-//        me.setName("Nguyen Huu Thanh");
-//        me.setId("17021014");
-//        me.setGroup("INT2204-5");
-//        me.setEmail("thanhnh99.amc@gmail.com");
-//        System.out.println("Cung lop");
-//        System.out.println(me.getName());
-//        System.out.println(me.getInfo());
-          StudentManagement St_list=new StudentManagement();
-          for(int i=0;i<5;i++)
-          {
-              St_list.Student_arr[i]=new Student();
-              St_list.Student_arr[i].setId(new Scanner(System.in).nextLine());
-          }
+        StudentManagement Student_Management=new StudentManagement();
+        //cau 6
+        //6a
+       Student thanh=new Student();
+       //6b
+        thanh.setGroup("INT2204-5");
+        Student me=new Student();
+        me.setName("Nguyen Huu Thanh");
+        me.setId("17021014");
+        me.setGroup("INT2204-5");
+        me.setEmail("thanhnh99.amc@gmail.com");
+        //6c
+        System.out.println(me.getName());
+        //6d
+        me.getInfo();
+        //cau 8
+        Student a=new Student();
+        a.getInfo();
+        Student b=new Student("Nguyen Huu Thanh","17021014","thanhnh99.amc@gmail.com");
+        b.getInfo();
+        Student c=new Student(b);
+        c.getInfo();
+        //cau 10
+        Student d=new Student(),e=new Student(),f=new Student();
+        f.setGroup("INT22042");
+        System.out.println("Neu cung lop in ra true, khac lop in ra false.");
+        System.out.println("hai sinh vien d,e : "+Student_Management.sameGroup(d,e));
+        System.out.println("hai sinh vien d,f : "+Student_Management.sameGroup(d,f));
+//        
+//          StudentManagement St_list=new StudentManagement();
+//          for(int i=0;i<5;i++)
+//          {
+//              St_list.Student_arr[i]=new Student();
+//              St_list.Student_arr[i].setId(new Scanner(System.in).nextLine());
+//          }
 //          if(St_list.sameGroup(St_list.Student_arr[0], St_list.Student_arr[1]))
 //          {
 //              System.out.println("Hai hoc sinh cung lop");
@@ -55,8 +76,6 @@ public class StudentManagement {
 //          {
 //              System.out.println("Hai hoc sinh khong cung lop");
 //          };
-          St_list.removeStudent("int22024");
-          
-        
+//          St_list.removeStudent("int22024");      
     }
 }

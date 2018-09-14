@@ -65,6 +65,7 @@ public class Student {
         this.name=n;
         this.id=sid;
         this.email=em;
+        this.group="INT22041";
     }
 
     /**
