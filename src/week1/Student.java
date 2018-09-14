@@ -80,10 +80,10 @@ public class Student {
         this.group=s.group;
     }
 
-    String getInfo() {
+    void getInfo() {
         // TODO:
         String a="Name: "+this.name+"\nID: "+this.id+"\nGroup: "+this.group+"\nEmail: "+this.email;
         
-        return a; 
+        System.out.println(a); 
     }
 }
