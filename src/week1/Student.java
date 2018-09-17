@@ -9,7 +9,7 @@ public class Student {
     private String group;//lop hoc
     private String email;//dia chi email
 
-    // TODO: khai bĂ¡o cĂ¡c phÆ°Æ¡ng thá»©c getter, setter cho Student
+    // TODO: khai bao cac phuong thuc getter, setter cho Student
 
     public String getName() {
         return name;

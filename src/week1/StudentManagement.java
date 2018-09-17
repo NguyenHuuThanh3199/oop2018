@@ -5,7 +5,13 @@ import java.util.Scanner;
 public class StudentManagement {
     // TODO: khai báo thuộc tính students là array chứa các đối tượng thuộc lớp Student (max. 100)
     public Student [] Student_arr=new Student[100];
-
+    public int StudentSum=0;
+    
+    public void add(Student s)
+    {
+        Student_arr[StudentSum]=s;
+        StudentSum++;
+    }
     public boolean sameGroup(Student s1, Student s2) {
         // TODO:
         
@@ -16,19 +22,31 @@ public class StudentManagement {
         // TODO:
         //sap xep sinh vien theo lop
         
+        
     }
-
+    void Student_Management_out()
+    {
+        for(int i=0;i<StudentSum;i++)
+        {
+            System.out.println("------------------------------------");
+            Student_arr[i].getInfo();
+        }
+    }
     void removeStudent(String id) {
         // TODO:
-        int i=0;
-        for(Student a:Student_arr)
+        for(int i=0;i<StudentSum;i++)
         {
-            i++;
-            if(a.getId().equals(id))
+            if(Student_arr[i].getId()==id)
             {
-                System.out.println("Xoa sinh vien thu" +i);
+                for(int j=i;j<StudentSum;j++)
+                {
+                    Student_arr[j]=Student_arr[j+1];
+                }
+                StudentSum--;
+                break;
             }
         }
+        
     }
 
     public static void main(String[] args) {
@@ -61,6 +79,18 @@ public class StudentManagement {
         System.out.println("Neu cung lop in ra true, khac lop in ra false.");
         System.out.println("hai sinh vien d,e : "+Student_Management.sameGroup(d,e));
         System.out.println("hai sinh vien d,f : "+Student_Management.sameGroup(d,f));
+        //cau 12
+        System.out.println("Câu 12");
+        Student_Management.add(a);
+        Student_Management.add(b);
+        Student_Management.add(c);
+        Student_Management.add(d);
+        Student_Management.add(e);
+        Student_Management.Student_Management_out();
+        System.out.println("------Remove Student-----");
+        Student_Management.removeStudent("17021014");
+        Student_Management.Student_Management_out();
+        
 //        
 //          StudentManagement St_list=new StudentManagement();
 //          for(int i=0;i<5;i++)
