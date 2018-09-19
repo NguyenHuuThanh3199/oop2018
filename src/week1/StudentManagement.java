@@ -40,7 +40,7 @@ public class StudentManagement {
         for (int i=0;i<StudentSum;i+=StuSameGroup)
         {
             StuSameGroup=0;
-            System.out.println("Group: "+Student_arr[i].getId());
+            System.out.println("Group: "+Student_arr[i].getGroup());
             for(int j=i;j<StudentSum;j++)
             {
                 if(Student_arr[i].getGroup().equals(Student_arr[j].getGroup()))
@@ -132,7 +132,8 @@ public class StudentManagement {
         Student_Management.Student_Management_out();
         
         //cau 11
-        System.out.println("-----------------Test Same by Group----------------");
+        System.out.println("-----------------Test Student by Group----------------");
+        Student_Management.add(b);
         a.setName("Thanh");
         a.setGroup("1123");
         b.setName("Nam");
@@ -143,7 +144,9 @@ public class StudentManagement {
         d.setGroup("1124");
         e.setName("Manh");
         e.setGroup("1125");
-        
+        //Student_Management.sortGroup();
+        System.out.println("--------------------------");
+        //Student_Management.Student_Management_out();
         Student_Management.studentsByGroup();
         
     }
