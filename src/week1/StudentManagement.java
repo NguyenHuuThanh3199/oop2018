@@ -3,9 +3,9 @@ package week1;
 public class StudentManagement {
     // TODO: khai báo thuộc tính students là array chứa các đối tượng thuộc lớp Student (max. 100)
     public Student [] Student_arr=new Student[100];
-    public int StudentSum=0;
+    public int StudentSum=0;//TOng so sinh vien
     
-    public void add(Student s)
+    public void add(Student s)//them 1 sinh vien vao mang Studen_arr
     {
         Student_arr[StudentSum]=s;
         StudentSum++;
@@ -15,11 +15,11 @@ public class StudentManagement {
         
         return s1.getGroup().equals(s2.getGroup()); 
     }
-    void sortGroup()
+    void sortGroup()//sap xep lai danh sach sinh vien theo lop
     {
         for(int i=0;i<StudentSum;i++)
         {
-            for(int j=i+1;j<StudentSum;j++)
+            for(int j=i+1;j<StudentSum;j++)//doi cho hai doi tuong sinh vien
             {
                 if(0<Student_arr[i].getGroup().compareTo(Student_arr[j].getGroup()))
                 {
@@ -31,12 +31,12 @@ public class StudentManagement {
             }
         }
     }
-    void studentsByGroup() {
+    void studentsByGroup() {//in ra danh sach sinh vien theo lop
         // TODO:
         //sap xep sinh vien theo lop
         sortGroup();
         //
-        int StuSameGroup;
+        int StuSameGroup;//So sinh vien cung 1 lop
         for (int i=0;i<StudentSum;i+=StuSameGroup)
         {
             StuSameGroup=0;
@@ -56,7 +56,7 @@ public class StudentManagement {
         }
         
     }
-    void Student_Management_out()
+    void Student_Management_out()//in danh sach sinh vien
     {
         for(int i=0;i<StudentSum;i++)
         {
@@ -64,7 +64,7 @@ public class StudentManagement {
             Student_arr[i].getInfo();
         }
     }
-    void removeStudent(String id) {
+    void removeStudent(String id) {//xoa 1 sinh vien trong class student_arr
         // TODO:
         for(int i=0;i<StudentSum;i++)
         {
@@ -144,9 +144,7 @@ public class StudentManagement {
         d.setGroup("1124");
         e.setName("Manh");
         e.setGroup("1125");
-        //Student_Management.sortGroup();
         System.out.println("--------------------------");
-        //Student_Management.Student_Management_out();
         Student_Management.studentsByGroup();
         
     }
