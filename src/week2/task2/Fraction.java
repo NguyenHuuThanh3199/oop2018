@@ -1,5 +1,6 @@
 package week2.task2;
 
+import static week2.task1.Task1.gcd;
 public class Fraction {
 
     // TODO: khai báo các thuộc tính
@@ -17,6 +18,7 @@ public class Fraction {
         Fraction sum=new Fraction(1,1);
         sum.numerator=this.numerator*other.denominator+this.denominator*other.numerator;
         sum.denominator=this.denominator*other.denominator;
+        sum.toigian();
         return sum;
     }
 
@@ -25,6 +27,7 @@ public class Fraction {
         Fraction offset=new Fraction(1,1);
         offset.numerator=this.numerator*other.denominator-this.denominator*other.numerator;
         offset.denominator=this.denominator*other.denominator;
+        offset.toigian();
         return offset;
     }
 
@@ -33,6 +36,7 @@ public class Fraction {
         Fraction multi=new Fraction(1,1);
         multi.numerator=this.numerator*other.numerator;
         multi.denominator=this.denominator*other.denominator;
+        multi.toigian();
         return multi;
     }
 
@@ -41,15 +45,17 @@ public class Fraction {
         Fraction Divide=new Fraction(1,1);
         Divide.numerator=this.numerator*other.denominator;
         Divide.denominator=this.denominator*other.numerator;
+        Divide.toigian();
         return Divide;
     }
     public boolean equals(Fraction other)
     {
         return (this.numerator/this.denominator)==(other.numerator/other.denominator);
-//        if(this.numerator/this.denominator==other.numerator/other.denominator)
-//        {
-//            return true;
-//        }
-//        return false;
+    }
+    public void toigian()
+    {
+        int a=gcd(this.denominator,this.numerator);
+        this.denominator=this.denominator/a;
+        this.numerator=this.numerator/a;
     }
 }
