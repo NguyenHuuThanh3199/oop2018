@@ -179,7 +179,7 @@ class pets
 class Motelroom
 {
     private String address;//địa chỉ
-    private String acreage;//dien tich
+    private int acreage;//dien tich
     private int price;//gia phong
     private boolean status=false;//phong da duoc thue chua. Khoi tao phong trong.
     private int rate;//danh gia phong tro
@@ -192,11 +192,11 @@ class Motelroom
         this.address = address;
     }
 
-    public String getAcreage() {
+    public int getAcreage() {
         return acreage;
     }
 
-    public void setAcreage(String acreage) {
+    public void setAcreage(int acreage) {
         this.acreage = acreage;
     }
 
@@ -230,7 +230,13 @@ class Motelroom
         else if(this.price<other.price) return -1;//phong this co gia thap hon phong other
         else return 0;//hai phong co gia bang nhau
     }
-    
+    public int CompareToAcreage(Motelroom other)//so sanh dien tich hai phong
+    {
+        if(this.acreage>other.acreage) return 1;
+        else if(this.acreage<other.acreage) return -1;
+        else return 0;
+        
+    }
     public void out()//in ra thong tin phong tro
     {
         System.out.println("-----THONG TIN PHONG TRO-----");
@@ -239,5 +245,9 @@ class Motelroom
         System.out.println("Dia chi: "+ this.address);
         System.out.println("Dien tich: "+this.acreage);
         System.out.println("Gia phong: "+this.price);
+    }
+    public static void main(String [] argv )
+    {
+        
     }
 }
