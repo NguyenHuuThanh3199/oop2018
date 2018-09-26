@@ -176,10 +176,68 @@ class pets
         System.out.println("Loai thuc an yeu thich: "+this.favoriteFood);
     }
 }
-class Motelrool
+class Motelroom
 {
-    String address;//địa chỉ
-    String acreage;//dien tich
-    int price;//gia phong
-    boolean status=false;//phong da duoc thue chua. Khoi tao phong trong.
+    private String address;//địa chỉ
+    private String acreage;//dien tich
+    private int price;//gia phong
+    private boolean status=false;//phong da duoc thue chua. Khoi tao phong trong.
+    private int rate;//danh gia phong tro
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getAcreage() {
+        return acreage;
+    }
+
+    public void setAcreage(String acreage) {
+        this.acreage = acreage;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public int getRate() {
+        return rate;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
+    }
+    
+    public int CompareToPrice(Motelroom other)//so sanh gia phong cua hai phong
+    {
+        if(this.price>other.price) return 1;//phong this co gia cao hon phong other
+        else if(this.price<other.price) return -1;//phong this co gia thap hon phong other
+        else return 0;//hai phong co gia bang nhau
+    }
+    
+    public void out()//in ra thong tin phong tro
+    {
+        System.out.println("-----THONG TIN PHONG TRO-----");
+        if(this.status=true) System.out.println("Phong da duoc thue");
+        else System.out.println("Phong con trong");
+        System.out.println("Dia chi: "+ this.address);
+        System.out.println("Dien tich: "+this.acreage);
+        System.out.println("Gia phong: "+this.price);
+    }
 }
