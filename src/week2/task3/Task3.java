@@ -3,6 +3,61 @@ package week2.task3;
 import java.util.Scanner;
 
 public class Task3 {
+    public static void main(String [] argv )
+    {
+//        System.out.println("-----Test Teacher-----");
+//        Teacher a=new Teacher();
+//        a.input();
+//        a.print();
+//        Teacher b=new Teacher();
+//        b.input();
+//        b.print();
+//        System.out.println("Hai giao vien day trung lop: "+a.SameSubjectAndClass(b));
+//        System.out.println("So sanh so nam lam viec cua a voi b: "+a.compareYearInWork(b));
+        //Test Pets
+        System.out.println("-----Test Pets-----");
+        Pets p=new Pets();
+        p.setName("Taddy");
+        p.setTypePets("Cat");
+        p.setWeight(3);
+        p.setYearOld(2);
+        p.setHobby("sleep");
+        p.setNameOfBoss("Thanh");
+        p.out();
+        Pets q=new Pets();
+        q.setName("Saddy");
+        q.setTypePets("Cat");
+        q.setWeight(4);
+        q.setYearOld(4);
+        q.setHobby("sleep");
+        q.setNameOfBoss("Thanh");
+        q.out();
+        System.out.println("Hai con vat cung so thich: "+p.sameHooby(q));
+        System.out.println("Hai con vat cung chu: ");
+        p.SameTypePetsSameBoss(q);
+        
+        
+        //Test Motel Room
+        
+        System.out.println("-----Test Motelroom-----");
+        Motelroom t=new Motelroom();
+        t.setAcreage(15);
+        t.setAddress("Cau Giay");
+        t.setPrice(1500000);
+        t.setRate(5);
+        t.setStatus(true);
+        t.out();
+        Motelroom x =new Motelroom();
+        x.setPrice(2000000);
+        x.setAddress("Thanh Xuan");
+        x.setAcreage(20);
+        x.setStatus(false);
+        x.setRate(4);
+        x.out();
+        System.out.println("Kiem tra xem phong co phu hop: "+t.fitroom(1700000, 4, "Cau Giay"));
+        System.out.println("So sanh dien tich hai phong x va t: "+x.CompareToAcreage(t));
+        System.out.println("So sanh gia hai phong x va t: "+x.CompareToPrice(t));
+    }
 }
 
 //TODO: khai báo 3 class tương ứng với 3 đối tượng thực tế ở dưới
@@ -12,14 +67,14 @@ class Teacher
 {
     private String name;//ten giao vien
     private String subject;//Mon hoc giang 
-    private int InClass;//lop giang day
+    private String InClass;//lop giang day
     private int yearInWork;//so nam giang day
 
-    public int getInClass() {
+    public String getInClass() {
         return InClass;
     }
 
-    public void setInClass(int InClass) {
+    public void setInClass(String InClass) {
         this.InClass = InClass;
     }
 
@@ -47,15 +102,17 @@ class Teacher
         this.yearInWork = yearInWork;
     }
 
-    public void input()
+    public void input()//nhap thong tin giao vien
     {
         System.out.println("--00--NHAP THONG TIN GIAO VIEN--00--");
-        System.out.print("Ten: ");
+        System.out.print("Name: ");
         this.setName(new Scanner(System.in).nextLine());
-        System.out.print("Mon hoc giang day: ");
+        System.out.print("Subject: ");
         this.setSubject(new Scanner(System.in).nextLine());
-        System.out.print("So nam giang day: ");
-        this.setName(new Scanner(System.in).nextLine());
+        System.out.print("Inclass: ");
+        this.setInClass(new Scanner(System.in).nextLine());
+        System.out.print("Year in work: ");
+        this.setYearInWork(new Scanner(System.in).nextInt());
         
     }
     public int compareYearInWork(Teacher other)//SO SANH SO NAM LAM VIEC CUA HAI GIAO VIEN
@@ -66,10 +123,11 @@ class Teacher
     }
     public boolean SameSubjectAndClass(Teacher other)//kiểm tra xem hai giao vien co day rung lop hay khong
     {
-        if(other.subject.equals(this.subject)&&other.InClass==this.InClass) return true;//hai giao vien day trung lop
-        return false;//hai giao vien khong day trung lop
+        return other.subject.equals(this.subject)&&other.InClass.equals(this.InClass);
+        //return true neu hai giao vien trung lop
+        //return false neu hai giao vien khac lop
     }
-    public void print()
+    public void print()//in ra thong tin giao vien
     {
         System.out.println("Name: "+getName());
         System.out.println("Years in work: "+getYearInWork());
@@ -77,10 +135,10 @@ class Teacher
     }
     
 }
-class pets
+class Pets
 {
-    private String nameOfBoss;
-    private String typePets;
+    private String nameOfBoss="";//ten cua chu
+    private String typePets;//
     private String name;
     private int yearOld;
     private int weight;
@@ -143,13 +201,14 @@ class pets
     public void setFavoriteFood(String favoriteFood) {
         this.favoriteFood = favoriteFood;
     }
-    public boolean sameHooby(pets other)//so sanh so thich cua hai thu cung.
+    
+    public boolean sameHooby(Pets other)//so sanh so thich cua hai thu cung.
     {
         return this.hobby.equals(other.hobby);
         //return true neu giong;
         //return false neu khong giong
     }
-    public void SameTypePetsSameBoss(pets other)//kiem tra xem 2 con pets co cung chu khong, neu khong thi kiem tra xem co cung loai khong
+    public void SameTypePetsSameBoss(Pets other)//kiem tra xem 2 con pets co cung chu khong, neu khong thi kiem tra xem co cung loai khong
     {
         if(this.nameOfBoss.equals(other.nameOfBoss))
         {
@@ -172,7 +231,7 @@ class pets
         System.out.println("----------THONG TIN THU CUNG-----------");
         System.out.println("Loai thu cung: "+this.typePets);
         System.out.println("Ten thu cung: "+this.name);
-        System.out.println("Tuoi: "+this.typePets+" tuoi");
+        System.out.println("Tuoi: "+this.yearOld+" tuoi");
         System.out.println("Loai thuc an yeu thich: "+this.favoriteFood);
     }
 }
@@ -237,6 +296,10 @@ class Motelroom
         else return 0;
         
     }
+    public boolean fitroom(int maxPrice,int ratemin,String address)//kiem tra xem phong co phu hop khong
+    {
+        return this.price<=maxPrice&&this.rate>=ratemin&&this.address.equals(address);
+    }
     public void out()//in ra thong tin phong tro
     {
         System.out.println("-----THONG TIN PHONG TRO-----");
@@ -245,9 +308,5 @@ class Motelroom
         System.out.println("Dia chi: "+ this.address);
         System.out.println("Dien tich: "+this.acreage);
         System.out.println("Gia phong: "+this.price);
-    }
-    public static void main(String [] argv )
-    {
-        
     }
 }

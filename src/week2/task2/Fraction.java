@@ -50,7 +50,9 @@ public class Fraction {
     }
     public boolean equals(Fraction other)
     {
-        return (this.numerator/this.denominator)==(other.numerator/other.denominator);
+        this.toigian();
+        other.toigian();
+        return (this.denominator==other.denominator)&&(this.numerator==other.numerator);
     }
     public void toigian()
     {
@@ -58,4 +60,31 @@ public class Fraction {
         this.denominator=this.denominator/a;
         this.numerator=this.numerator/a;
     }
+    public void out()
+    {
+        System.out.println(this.numerator+ "/" +this.denominator+"\n");
+    }
+    public static void main(String [] args)
+    {
+        Fraction a=new Fraction(8,16);
+        Fraction b=new Fraction(3,12);
+        Fraction c=new Fraction(1,1);
+        System.out.print("a= ");
+        a.out();
+        System.out.print("b= ");
+        b.out();
+        c=a.multiply(b);
+        System.out.print("a*b=");
+        c.out();
+        c=a.divide(b);
+        System.out.print("a/b=");
+        c.out();
+        c=a.add(b);
+        System.out.print("a+b=");
+        c.out();
+        c=a.subtract(b);
+        System.out.print("a-b=");
+        c.out();
+    }
+            
 }
