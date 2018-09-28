@@ -26,6 +26,7 @@ public class Fraction {
         // TODO: Phương thức trừ hai phân số (this và other), trả về đối tượng Fraction mới
         Fraction offset=new Fraction(1,1);
         offset.numerator=this.numerator*other.denominator-this.denominator*other.numerator;
+        
         offset.denominator=this.denominator*other.denominator;
         offset.toigian();
         return offset;
@@ -48,11 +49,17 @@ public class Fraction {
         Divide.toigian();
         return Divide;
     }
-    public boolean equals(Fraction other)
+    public boolean equals(Object obj)
     {
-        this.toigian();
-        other.toigian();
-        return (this.denominator==other.denominator)&&(this.numerator==other.numerator);
+        if (obj instanceof Fraction)
+        {
+            Fraction other=(Fraction) obj;
+            if(this.denominator==0||other.denominator==0) return false;
+            this.toigian();
+            other.toigian();
+            return (this.denominator==other.denominator)&&(this.numerator==other.numerator);
+        }
+        return false;
     }
     public void toigian()
     {
@@ -62,12 +69,16 @@ public class Fraction {
     }
     public void out()
     {
-        System.out.println(this.numerator+ "/" +this.denominator+"\n");
+        if(this.numerator==0) System.out.println("0");
+        else 
+        {
+            System.out.println(this.numerator+ "/" +this.denominator+"\n");
+        }
     }
     public static void main(String [] args)
     {
         Fraction a=new Fraction(8,16);
-        Fraction b=new Fraction(3,12);
+        Fraction b=new Fraction(2,2);
         Fraction c=new Fraction(1,1);
         System.out.print("a= ");
         a.out();
@@ -85,6 +96,7 @@ public class Fraction {
         c=a.subtract(b);
         System.out.print("a-b=");
         c.out();
+        System.out.println("a==b: "+a.equals(b));
     }
             
 }
