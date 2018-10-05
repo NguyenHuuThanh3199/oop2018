@@ -11,8 +11,7 @@ public class StudentManagement {
         StudentSum++;
     }
     public boolean sameGroup(Student s1, Student s2) {
-        // TODO:
-        
+        // TODO:        
         return s1.getGroup().equals(s2.getGroup()); 
     }
     void sortGroup()//sap xep lai danh sach sinh vien theo lop
@@ -21,7 +20,7 @@ public class StudentManagement {
         {
             for(int j=i+1;j<StudentSum;j++)//doi cho hai doi tuong sinh vien
             {
-                if(0<Student_arr[i].getGroup().compareTo(Student_arr[j].getGroup()))
+                if(Student_arr[i].getGroup().compareTo(Student_arr[j].getGroup())>0)
                 {
                     Student x;
                     x=Student_arr[i];

@@ -49,6 +49,8 @@ public class Fraction {
         Divide.toigian();
         return Divide;
     }
+    float b;
+    int a=(int)b;
     public boolean equals(Object obj)
     {
         if (obj instanceof Fraction)
