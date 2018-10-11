@@ -7,3 +7,10 @@
  * @version 0.1
  */
 package week4.task2;
+class main
+{
+    public static void main(String[] argv)
+    {
+        
+    }        
+}  
