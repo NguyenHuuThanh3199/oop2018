@@ -37,10 +37,19 @@ public class Shape {
     public void setFilled(boolean filled) {
         this.filled = filled;
     }
+    @Override
     public String toString()
     {
-        return null;
+        return "color: "+this.color+"\nFilled: "+this.filled;
     }
     
-            
+    public static void main(String[] args) {
+     
+        System.out.println("----------Test Shape----------");
+        Shape a=new Shape();
+        System.out.println(a.toString());
+        Shape b=new Shape("blue",true);
+        System.out.print(b.toString());
+    }
+    
 }
