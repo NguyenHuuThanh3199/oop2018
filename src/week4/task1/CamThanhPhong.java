@@ -35,4 +35,9 @@ public class CamThanhPhong extends Cam{
         else if(this.trongnuoc==false &&this.xuatkhau==true) return "chi xuat khau, khong co trong nuoc";
         return "khong co gia tri thuong mai";
     }
+    @Override
+    public void print()
+    {
+        System.out.println("Day la cam thanh phong");
+    }
 }

@@ -7,10 +7,3 @@
  * @version 0.1
  */
 package week4.task2;
-class Run
-{
-    
-                
-        
-               
-}  

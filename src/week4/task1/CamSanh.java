@@ -35,4 +35,9 @@ public class CamSanh extends Cam{
         else if(this.an==false && this.ban==true) return "chi ban khong an";
         else return "khong the su dung";
     }
+    @Override
+    public void print()
+    {
+        System.out.println("Day la cam Sanh");
+    }
 }

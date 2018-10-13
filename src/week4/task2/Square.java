@@ -34,23 +34,25 @@ public class Square extends Rectangle{
 
     @Override
     public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return "Day la hinh vuong"; //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void setLength(double side) {
-        super.setLength(side); //To change body of generated methods, choose Tools | Templates.
+        super.setLength(side);
+        super.setWidth(side);//To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void setWidth(double side) {
-        super.setWidth(side); //To change body of generated methods, choose Tools | Templates.
+        super.setWidth(side); 
+        super.setLength(side);//To change body of generated methods, choose Tools | Templates.
     }
     
     
-    public static void main(String [] argv)
-    {
-        Square a= new Square(5);
-        System.out.print(a);
-    }
+//    public static void main(String [] argv)
+//    {
+//        Square a= new Square(5);
+//        System.out.print(a);
+//    }
 }

@@ -28,6 +28,7 @@ public class Cam extends HoaQua{
     public void setSanLuong(double sanLuong) {
         this.sanLuong = sanLuong;
     }
+
    public int SoSanhSanLuong(Cam other)
    {
        if(this.sanLuong>other.sanLuong) return 1;

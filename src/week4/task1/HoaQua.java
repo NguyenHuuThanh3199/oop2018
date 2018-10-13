@@ -11,8 +11,8 @@ package week4.task1;
  */
 public class HoaQua {
     public final double hamluongCBQchuan=0.1;
-    private double hamLuongChatBQ ;// tren 1kg
-    private String maSanPham;
+    private double hamLuongChatBQ =0;// tren 1kg
+    private String maSanPham=null;
 
     public double getHamLuongChatBQ() {
         return hamLuongChatBQ;
