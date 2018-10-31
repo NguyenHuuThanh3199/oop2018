@@ -1,11 +1,13 @@
 package week7.task1;
 
-public class Addition extends BinaryExpression{
-    private  Expression left;
+import java.security.DigestInputStream;
 
-    private  Expression right;
+public class Division extends BinaryExpression {
 
-    public Addition(Expression left,Expression right)
+    private Expression left;
+    private Expression right;
+
+    public Division(Expression left,Expression right)
     {
         this.right=right;
         this.left=left;
@@ -22,11 +24,11 @@ public class Addition extends BinaryExpression{
 
     @Override
     public String toString() {
-        return left().toString()+"+"+ right().toString();
+        return left.toString()+"/"+right.toString();
     }
 
     @Override
     public int evaluate() {
-        return left.evaluate()+right.evaluate();
+        return left.evaluate()/right.evaluate();
     }
 }
