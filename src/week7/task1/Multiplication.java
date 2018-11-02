@@ -27,6 +27,6 @@ public class Multiplication extends BinaryExpression{
 
     @Override
     public int evaluate() {
-        return left.evaluate()-right.evaluate();
+        return left.evaluate()*right.evaluate();
     }
 }
