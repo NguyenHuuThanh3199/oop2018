@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Task1 {
-    public static ArrayList<String> getAllFuncion(File path)
+    public static List<String> getAllFuncion(File path)
     {
-        ArrayList<String> funcion=new ArrayList<>();
+        List<String> funcion=new ArrayList<>();
         File file = new File(path.getAbsolutePath());
         int i=0;
         int open=1,close=0;
@@ -21,10 +21,10 @@ public class Task1 {
             Scanner scanner=new Scanner(file);
             while(scanner.hasNextLine())
             {
-                if((d=scanner.nextLine()).contains("static"))
+                if((d=scanner.nextLine()).contains("static")&&!d.contains("//"))
                 {
                     a=d;
-                    a+="\n";
+                    //a+="\n";
                     while(open!=close)
                     {
                         String c="";
@@ -32,7 +32,7 @@ public class Task1 {
                         if(c.contains("}")) close+=1;
                         if(c.contains("{")) open+=1;
                         a+=c;
-                        a+="\n";
+                        //a+="\n";
                     }
                     funcion.add(a);
                 }
@@ -45,42 +45,39 @@ public class Task1 {
         }
         return funcion;
     }
-    public String findFuncionByName(String name)
+    public static String findFuncionByName(String name)
     {
         String filepath="C:\\Github\\oop2018\\src\\week9\\Utils.java";
         File fileRead=new File(filepath);
-        int i=0;
-        ArrayList<String> dataType =new ArrayList<String>();
+        String allDataFile="";
         try {
             Scanner scanner=new Scanner(fileRead);
-            while (scanner.hasNext())
-                if(scanner.nextLine().contains(name))
-                {
-                    if(scanner.next()== "(")
-                    {
-                        while(scanner.next()!=")")
-                        {
-                            dataType.add(scanner.next());
-                            i++;
-                        }
-                    }
-                }
+            while(scanner.hasNextLine())
+            {
+                allDataFile+=scanner.nextLine();
+            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        return name;
+        allDataFile.replace(" path","")
+                .replace(" content","")
+                .replace(" data","")
+                .replace(" folderPath","")
+                .replace(" filename","");
+        if(allDataFile.contains(name)) return "tim thay "+name;
+        else return "khong tim thay "+name;
     }
-
+    
     public static void main(String[] args) {
 
         File file =new File("C:\\Github\\oop2018\\src\\week9\\Utils.java");
-        ArrayList <String> a=new ArrayList<String>();
+        List <String> a=new ArrayList<String>();
         a=getAllFuncion(file);
         for(int i=0;i<a.size();i++)
         {
             System.out.println(a.get(i));
             System.out.println("-----------------------------------");
         }
-
+        System.out.println(findFuncionByName("findFileByName(String, String)"));
     }
 }
