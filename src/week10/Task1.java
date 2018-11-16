@@ -23,16 +23,14 @@ public class Task1 {
             {
                 if((d=scanner.nextLine()).contains("static")&&!d.contains("//"))
                 {
-                    a=d;
-                    //a+="\n";
+                    a=d+"\n";
                     while(open!=close)
                     {
                         String c="";
                         c=scanner.nextLine();
                         if(c.contains("}")) close+=1;
                         if(c.contains("{")) open+=1;
-                        a+=c;
-                        //a+="\n";
+                        a+=c+"\n";
                     }
                     funcion.add(a);
                 }
@@ -54,12 +52,14 @@ public class Task1 {
             Scanner scanner=new Scanner(fileRead);
             while(scanner.hasNextLine())
             {
-                allDataFile+=scanner.nextLine();
+                allDataFile+=scanner.nextLine()+"\n";
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        allDataFile.replace(" path","")
+
+//        System.out.println("-----------------------------------");
+        allDataFile=allDataFile.replace(" path","")
                 .replace(" content","")
                 .replace(" data","")
                 .replace(" folderPath","")
@@ -67,17 +67,18 @@ public class Task1 {
         if(allDataFile.contains(name)) return "tim thay "+name;
         else return "khong tim thay "+name;
     }
-    
+
     public static void main(String[] args) {
 
         File file =new File("C:\\Github\\oop2018\\src\\week9\\Utils.java");
         List <String> a=new ArrayList<String>();
         a=getAllFuncion(file);
-        for(int i=0;i<a.size();i++)
-        {
-            System.out.println(a.get(i));
-            System.out.println("-----------------------------------");
-        }
+        System.out.println(a.get(3));
+//        for(int i=0;i<a.size();i++)
+//        {
+//            System.out.println(a.get(i));
+//            System.out.println("-----------------------------------");
+//        }
         System.out.println(findFuncionByName("findFileByName(String, String)"));
     }
 }
