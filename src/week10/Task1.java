@@ -1,7 +1,4 @@
 package week10;
-
-import sun.awt.geom.AreaOp;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
