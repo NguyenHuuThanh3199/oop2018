@@ -25,5 +25,16 @@ public class Task2 {
             System.out.print(Int[i]+" ");
         }
         System.out.println("MAX INT = "+Task2.max(Int));
+
+        System.out.println("==========================================");
+
+        Character[] characters=new Character[10];
+        for(int i=0;i<10;i++)
+        {
+            characters[i]=(char)(random.nextInt(26)+'a');
+            System.out.print(characters[i]+" ");
+        }
+        System.out.println("MAX CHAR = "+Task2.max(characters));
+
     }
 }
